@@ -7,7 +7,9 @@ docker pull ibmcom/db2
 docker run -itd --name mydb2 --privileged=true -p 50000:50000 -e LICENSE=accept -e DB2INST1_PASSWORD=kenward -e DBNAME=testdb -v luw:/database ibmcom/db2
  
 docker exec -ti mydb2 bash -c "su - db2inst1"
- 
+
+db2 CREATE DB cs157a
+
 db2 connect to cs157a
 
 db2 -tvf p1_create.sql 
@@ -31,7 +33,7 @@ Or.....
 Check result with test1.out notes:
 java -cp ":./db2jcc4.jar" ProgramLauncher ./db.properties > test1.out
 
-MADE A RESULT FOR CODE
+MADE A RESULT FOR CODE in test1.out
 
 -------------------------Formal Terminal-------------------
 
